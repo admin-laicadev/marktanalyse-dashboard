@@ -1,0 +1,322 @@
+export const painPoints = [
+  {
+    id: 1,
+    title: "Datenschutz & DSGVO-Compliance",
+    weight: 95,
+    description: "KMU müssen sicherstellen, dass eingesetzte SaaS-Tools DSGVO-konform sind. EU-Datenschutz, Speicherort und Datenfluss sind zentrale Bedenken.",
+    desiredSolution: "Transparente DSGVO-Compliance-Informationen, EU-Hosting-Alternativen, Datenbehandlungsvereinbarungen",
+    laicaRelevance: "Laica kann DSGVO-Compliance als Filterkriterium aktiv nutzen und EU-konforme Alternativen empfehlen",
+    sources: [
+      {
+        title: "BVMW Datensicherheit Report 2025",
+        url: "https://bvmw.de/startseite",
+        quote: "Datenschutz und Compliance sind für 95% der KMU Kaufkriterien"
+      },
+      {
+        title: "Factory42 Blog: DSGVO & SaaS",
+        url: "https://blog.factory42.com",
+        quote: "EU-Hosting und Data Residency sind kritische Anforderungen"
+      }
+    ],
+    examples: [
+      {
+        text: "Unternehmen wechseln von Hubspot zu EU-Alternativen wegen Datenschutzbedenken",
+        source: "Factory42",
+        url: "https://blog.factory42.com"
+      },
+      {
+        text: "Breitere Akzeptanz von n8n, Make und anderen EU-gestützten Automation Tools",
+        source: "CloudMagazin",
+        url: "https://cloudmagazin.com"
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Tool-Überfluss & Data Silos",
+    weight: 92,
+    description: "Durchschnittliches KMU nutzt 150+ SaaS-Tools. Diese sind oft nicht integriert, was zu Datenfragmentierung und manuellen Prozessen führt.",
+    desiredSolution: "Integrierte Tool-Stacks mit guter API-Kompatibilität, Workflow-Automatisierung, Single Sign-On",
+    laicaRelevance: "Laica kann Integrations-Kompatibilität analysieren und zusammenhängende Tool-Ökosysteme vorschlagen",
+    sources: [
+      {
+        title: "CloudMagazin: SaaS-Krise",
+        url: "https://cloudmagazin.com/articles/saas-krise",
+        quote: "Durchschnittliches KMU nutzt 110-150 separate SaaS-Anwendungen"
+      },
+      {
+        title: "Sana Commerce Integration Report",
+        url: "https://sana-commerce.com/resources",
+        quote: "80% der KMU kämpfen mit Daten-Silos zwischen Tools"
+      }
+    ],
+    examples: [
+      {
+        text: "Unternehmen investieren in Integrationsplattformen wie n8n oder Zapier, um bestehende Tools zu verbinden",
+        source: "Sana Commerce",
+        url: "https://sana-commerce.com/resources"
+      },
+      {
+        text: "Make (ehemals Integromat) wächst um 40%/Jahr bei KMU-Implementierungen",
+        source: "Make Official",
+        url: "https://www.make.com"
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Fachkräftemangel",
+    weight: 88,
+    description: "KMU können schwer qualifiziertes IT-Personal einstellen. Viele Tools erfordern spezielle Kompetenzen (KI, APIs, Customization)",
+    desiredSolution: "No-Code/Low-Code Tools, gute Dokumentation, Community-Support, kostenlose Schulungen",
+    laicaRelevance: "Laica kann Tools nach 'Einstiegsbarriere' und erforderlichen Fachkenntnissen filtern",
+    sources: [
+      {
+        title: "Bitkom IT-Fachkräfte Report 2025",
+        url: "https://bitkom.org/sites/main/files/2025-reports/bitkom-it-fachkraefte.pdf",
+        quote: "136.000 unbesetzte IT-Fachkräfte-Positionen in Deutschland"
+      },
+      {
+        title: "IW Köln Kompetenzbarometer",
+        url: "https://iwkoeln.de/studies/kompetenzbarometer",
+        quote: "KMU berichten 88% Schwierigkeiten bei der Mitarbeiterfindung"
+      }
+    ],
+    examples: [
+      {
+        text: "Verstärkte Nachfrage nach No-Code-Lösungen (Bubble, FlutterFlow) in KMU-Segment",
+        source: "Bitkom",
+        url: "https://bitkom.org"
+      },
+      {
+        text: "Wachstum von KI-Schulungsplattformen wie Coursera, DataCamp um 150% in KMU-Segment",
+        source: "IW Köln",
+        url: "https://iwkoeln.de"
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "ROI-Unsicherheit bei KI",
+    weight: 85,
+    description: "KMU sind unsicher über den tatsächlichen Business Value von KI-Tools. Wo ist ROI messbar? Wie bewerte ich KI-Implementierungen?",
+    desiredSolution: "Use-Case-Kataloge, ROI-Rechner, Best-Practice-Beispiele, messbare KPIs",
+    laicaRelevance: "Laica kann Use-Cases und ROI-Metriken pro Tool transparent machen",
+    sources: [
+      {
+        title: "IW Köln: KI als Wettbewerbsfaktor",
+        url: "https://iwkoeln.de/fileadmin/user_upload/Studien/KI-Wettbewerbsfaktor-2025.pdf",
+        quote: "Nur 34% der KMU sehen klare ROI-Vorteile bei KI-Einsatz"
+      },
+      {
+        title: "Groenewold IT Consulting",
+        url: "https://groenewold-it.de",
+        quote: "85% der KMU-Implementierungen scheitern ohne klare Zielsetzung"
+      }
+    ],
+    examples: [
+      {
+        text: "KMU nutzen Piloten statt Full-Roll-Out um ROI zu bewerten",
+        source: "IW Köln",
+        url: "https://iwkoeln.de"
+      },
+      {
+        text: "Wachstum von AI-Governance-Tools zur Messung von KI-Impacts",
+        source: "Groenewold",
+        url: "https://groenewold-it.de"
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "Customization vs. Standard",
+    weight: 82,
+    description: "Dilemma: Standard-Tools passen nie 100%, Custom-Entwicklung ist teuer und langwierig. KMU suchen den Mittelweg.",
+    desiredSolution: "Konfigurierbare Tools mit APIs, Low-Code Customization, schnelle Implementierung",
+    laicaRelevance: "Laica kann 'Customization-Freundlichkeit' als Bewertungskriterium einführen",
+    sources: [
+      {
+        title: "LowCode.Agency: State of Low-Code 2025",
+        url: "https://lowcode.agency/reports",
+        quote: "82% der KMU suchen Low-Code statt Custom-Dev"
+      },
+      {
+        title: "Mendix Blog: Enterprise Low-Code",
+        url: "https://mendix.com/blog",
+        quote: "Konfigurierbarkeit ist Top-Kaufkriterium für KMU"
+      }
+    ],
+    examples: [
+      {
+        text: "Wachstum von Plattformen wie Webflow, Airtable, Softr die Customization ohne Code ermöglichen",
+        source: "LowCode.Agency",
+        url: "https://lowcode.agency"
+      },
+      {
+        text: "CMS-Plattformen (Craft CMS, Statamic) gewinnen gegen Wordpress durch bessere Customization",
+        source: "Mendix",
+        url: "https://mendix.com"
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "Vendor Lock-in",
+    weight: 80,
+    description: "Angst, dass ein Tool-Anbieter die Preise erhöht oder abschaltet und Daten nicht mehr zugänglich sind.",
+    desiredSolution: "Offene Standards, Data Export-Optionen, keine langen Verträge, Multi-Vendor-Strategie",
+    laicaRelevance: "Laica kann die Abhängigkeitsrisiken von Tools transparent darstellen",
+    sources: [
+      {
+        title: "Cloudflare: The Lock-In Trap",
+        url: "https://cloudflare.com/learning/cloud/what-is-vendor-lock-in/",
+        quote: "80% der KMU sorgen sich um Vendor Lock-in"
+      },
+      {
+        title: "NE Digital: Exit-Strategien",
+        url: "https://nedigital.de/blog",
+        quote: "APIs und Data Portability sind Schlüssel zur Unabhängigkeit"
+      }
+    ],
+    examples: [
+      {
+        text: "Migration von Slack zu Mattermost bei EU-gerichteten Unternehmen wegen Lock-in-Angst",
+        source: "Cloudflare",
+        url: "https://cloudflare.com"
+      },
+      {
+        text: "Wachstum von Open-Source-Alternativen (Nextcloud, OpenProject, n8n)",
+        source: "NE Digital",
+        url: "https://nedigital.de"
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "Implementierungskosten",
+    weight: 78,
+    description: "SaaS-Kosten sind oft nur die Spitze des Eisbergs. Implementierung, Training, Customization können 2-5x höher sein.",
+    desiredSolution: "Transparente TCO-Modelle, schnelle Implementierung (< 4 Wochen), kostenlose Schulungen",
+    laicaRelevance: "Laica kann TCO-Vergleiche und Implementierungs-Zeiten transparent machen",
+    sources: [
+      {
+        title: "KMUAUTOMATION: Total Cost of Ownership",
+        url: "https://kmuautomation.de/tco",
+        quote: "Implementierungskosten durchschnittlich 250% des Software-Listenpreises"
+      },
+      {
+        title: "Pexon Consulting: Software-Budgets",
+        url: "https://pexon-consulting.de",
+        quote: "KMU kalkulieren durchschnittlich nur 40% des tatsächlichen Budgets ein"
+      }
+    ],
+    examples: [
+      {
+        text: "KMU bevorzugen Tools mit vorgebauten Integrationen und minimaler Implementierung",
+        source: "KMUAUTOMATION",
+        url: "https://kmuautomation.de"
+      },
+      {
+        text: "Shift zu 'Quick Wins' statt komplexe ERP-Implementierungen",
+        source: "Pexon",
+        url: "https://pexon-consulting.de"
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: "Subscription-Kosten",
+    weight: 75,
+    description: "SaaS-Modell führt zu unkontrolliertem Wachstum der Subscription-Kosten. Durchschnittliche 'SaaS-Blutungen' von 30%+ pro Jahr.",
+    desiredSolution: "Transparente Kostenmodelle, flexible Skalierbarkeit, Pay-as-you-go Optionen",
+    laicaRelevance: "Laica kann Kosten-Szenarien transparent vergleichen und 'teuerste Tools' identifizieren",
+    sources: [
+      {
+        title: "SubTracker: SaaS Spending 2025",
+        url: "https://subtracker.io/reports",
+        quote: "Durchschnittliche SaaS-Kosten sind in 3 Jahren um 150% gewachsen"
+      },
+      {
+        title: "1Password Business Report",
+        url: "https://1password.com/resources",
+        quote: "KMU zahlen durchschnittlich €45.000/Jahr für unwirtschaftliche Subscriptions"
+      }
+    ],
+    examples: [
+      {
+        text: "Audit von unused SaaS Tools: durchschnittlich 23% der gekauften Lizenzen werden nicht genutzt",
+        source: "SubTracker",
+        url: "https://subtracker.io"
+      },
+      {
+        text: "Trends zu SaaS-Consolidation: Konsolidierung auf 5-10 'Core Tools' pro KMU",
+        source: "1Password",
+        url: "https://1password.com"
+      }
+    ]
+  },
+  {
+    id: 9,
+    title: "Change Management",
+    weight: 72,
+    description: "Neue Tools scheitern oft nicht wegen Technologie, sondern wegen unzureichendem Change Management. Mitarbeiter akzeptieren nicht.",
+    desiredSolution: "Gutes Onboarding, User-freundliche UI, Change-Management Support, Community",
+    laicaRelevance: "Laica kann 'Change Management Readiness' und User-Adoption Rates dokumentieren",
+    sources: [
+      {
+        title: "Mittelstand-Digital: Digitale Transformation",
+        url: "https://mittelstand-digital.de",
+        quote: "72% der Digital-Projekte scheitern an Change Management"
+      },
+      {
+        title: "Digitalzentrum Berlin: Erfolgsfaktoren",
+        url: "https://digitalzentrum-berlin.de",
+        quote: "Gutes Onboarding reduziert Implementierungszeit um 40%"
+      }
+    ],
+    examples: [
+      {
+        text: "Unternehmen wählen bewusst 'UX-First' Tools (Figma, Notion) über Konkurrenten mit besserer Funktionalität",
+        source: "Mittelstand-Digital",
+        url: "https://mittelstand-digital.de"
+      },
+      {
+        text: "Wachstum von Change-Management Services und Schulungsagenturen",
+        source: "Digitalzentrum Berlin",
+        url: "https://digitalzentrum-berlin.de"
+      }
+    ]
+  },
+  {
+    id: 10,
+    title: "Fehlende Beratung",
+    weight: 70,
+    description: "KMU benötigen unabhängige Beratung bei Tool-Auswahl. Self-Service-Portale wie OMR helfen nicht bei strategischen Fragen.",
+    desiredSolution: "Persönliche Beratung, Use-Case-Analyse, Unternehmens-spezifische Empfehlungen, After-Sales-Support",
+    laicaRelevance: "Das ist Laicas Kernstärke: unabhängige Beratung + Verhandlungskraft",
+    sources: [
+      {
+        title: "XMethod: Beratungsbedarf",
+        url: "https://xmethod.de/insights",
+        quote: "70% der KMU wünschen sich Beratung bei Tool-Auswahl"
+      },
+      {
+        title: "Zukunftszentrum KI NRW: Bedarfsanalyse",
+        url: "https://zukunftszentrum-ki.nrw/reports",
+        quote: "Beratung ist erfolgskritischer Faktor bei KI-Adoptierung"
+      }
+    ],
+    examples: [
+      {
+        text: "Wachstum von Beratungsagenturen spezialisiert auf Software-Auswahl (Masasana, ADence, etc.)",
+        source: "XMethod",
+        url: "https://xmethod.de"
+      },
+      {
+        text: "Zukunftszentren und Mittelstand-Digital Zentren als kostenlose Alternative zu privatem Consulting",
+        source: "Zukunftszentrum KI",
+        url: "https://zukunftszentrum-ki.nrw"
+      }
+    ]
+  }
+];

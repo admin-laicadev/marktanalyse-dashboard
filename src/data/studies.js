@@ -1,0 +1,242 @@
+export const studies = [
+  {
+    id: 1,
+    title: "Bitkom KI 2025",
+    publisher: "Bitkom e.V.",
+    date: "Februar 2026",
+    url: "https://www.bitkom.org/sites/main/files/2026-02/bitkom-studienbericht-ki.pdf",
+    keyFindings: [
+      "36% der deutschen Unternehmen nutzen bereits KI",
+      "59% planen KI-Einsatz in den nächsten 2 Jahren",
+      "Datenschutz ist Top-Bedenken bei 89% der KMU",
+      "KI-Einsatz führt zu 25% Produktivitätssteigerung im Durchschnitt"
+    ],
+    keyNumbers: [
+      { label: "KI-Nutzer heute", value: "36%" },
+      { label: "KI-Planer (2J.)", value: "59%" },
+      { label: "Datenschutz-Bedenken", value: "89%" },
+      { label: "Produktivitätsgain", value: "+25%" }
+    ],
+    relevance: "Baseline für KI-Adoption in Deutschland. Zeigt Größe des Marktes für Laica."
+  },
+  {
+    id: 2,
+    title: "DIHK Digitalisierung 2025",
+    publisher: "Deutscher Industrie- und Handelskammertag",
+    date: "Januar 2026",
+    url: "https://www.dihk.de/de/themen-und-positionen/wirtschaft-digital/digitalisierung/digitalisierungsumfrage-25",
+    keyFindings: [
+      "KMU investieren durchschnittlich 45.000€/Jahr in Digital-Technologien",
+      "Budget für Digitalisierung ist 2025 um 32% gewachsen",
+      "Nur 22% der KMU haben eine Digitalisierungsstrategie",
+      "Integration von bestehenden Systemen ist Top-Herausforderung"
+    ],
+    keyNumbers: [
+      { label: "Durchschn. Digital-Budget", value: "€45K/Jahr" },
+      { label: "Budget-Wachstum YoY", value: "+32%" },
+      { label: "Mit Strategie", value: "22%" },
+      { label: "Integrations-Probleme", value: "67%" }
+    ],
+    relevance: "Zeigt, dass KMU aktiv investieren, aber strategische Führung fehlt. Laicas Kernaufgabe."
+  },
+  {
+    id: 3,
+    title: "KfW Digitalisierungsbericht 2024",
+    publisher: "Kreditanstalt für Wiederaufbau",
+    date: "September 2024",
+    url: "https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2024.pdf",
+    keyFindings: [
+      "Mittelstand digitalisiert langsamer als große Unternehmen",
+      "Cybersecurity ist kritischer Faktor für Digital-Adoption",
+      "Cloud-Nutzung wächst, aber Bedenken bleiben hoch",
+      "Fachkräftemangel ist Hauptbremse für Digitalisierung"
+    ],
+    keyNumbers: [
+      { label: "Cloud-Nutzer", value: "58%" },
+      { label: "Cybersecurity-Bedenken", value: "78%" },
+      { label: "Fachkräfte-Engpässe", value: "82%" },
+      { label: "Digitalisierungs-Tempo", value: "2-3J. Verzögerung" }
+    ],
+    relevance: "Unterstreicht Fachkräftemangel und Cybersecurity als zentrale Laica-Anwendungsfälle."
+  },
+  {
+    id: 4,
+    title: "Gartner Software Buying 2025",
+    publisher: "Gartner Inc.",
+    date: "Dezember 2025",
+    url: "https://www.gartner.com/en/digital-markets/insights/2025-software-buying-trends",
+    keyFindings: [
+      "Software Buying Cycle hat sich auf durchschnittlich 10.1 Monate verlängert",
+      "60% der KMU nutzen externe Berater beim Softwarekauf",
+      "Vendor Consolidation ist Trend: durchschnittlich 8 Core-Tools pro Unternehmen",
+      "RFP-Prozess wird immer wichtiger für größere Deals"
+    ],
+    keyNumbers: [
+      { label: "Buying Cycle", value: "10.1 Mo." },
+      { label: "Mit Berater", value: "60%" },
+      { label: "Core-Tools", value: "~8" },
+      { label: "RFP-Nutzung", value: "+45%" }
+    ],
+    relevance: "Gartner bestätigt Bedarf für professionelle Buying-Prozesse und externe Berater wie Laica."
+  },
+  {
+    id: 5,
+    title: "GP Bullhound European SaaS 2025",
+    publisher: "GP Bullhound",
+    date: "März 2026",
+    url: "https://www.gpbullhound.com/articles/european-saas-report-2025/",
+    keyFindings: [
+      "Europäischer SaaS-Markt wächst 15% YoY",
+      "KMU-fokussierte SaaS wächst schneller (22% YoY) als Enterprise",
+      "EU-Compliance Tools gewinnen Marktanteile",
+      "Konsolidierung im SaaS-Markt: 150+ Akquisitionen in 2025"
+    ],
+    keyNumbers: [
+      { label: "EU-SaaS Wachstum", value: "+15%" },
+      { label: "KMU-SaaS Wachstum", value: "+22%" },
+      { label: "Akquisitionen 2025", value: "150+" },
+      { label: "Markt-Wert 2025", value: "€150B+" }
+    ],
+    relevance: "Zeigt KMU-fokussierten SaaS-Markt und Bedeutung von EU-Compliance für Laica."
+  },
+  {
+    id: 6,
+    title: "IDC SMB 2026: Digital Landscape",
+    publisher: "IDC",
+    date: "Januar 2026",
+    url: "https://www.idc.com/resource-center/blog/the-smb-2026-digital-landscape-how-ai-is-redefining-growth/",
+    keyFindings: [
+      "AI-Integration ist Top-Priorität für 78% der SMB in 2026",
+      "SMB sind bereit, 35% mehr für AI-Features auszugeben",
+      "Aber: 62% der SMB fühlen sich überfordert von AI-Optionen",
+      "Guidance und Beratung werden als kritischste AI-Anforderung genannt"
+    ],
+    keyNumbers: [
+      { label: "AI Priority", value: "78%" },
+      { label: "Zusatz-Budget für AI", value: "+35%" },
+      { label: "Überfordert von Optionen", value: "62%" },
+      { label: "Beratungs-Bedarf", value: "71%" }
+    ],
+    relevance: "IDC validiert Markt für Laica: KMU wollen KI, wissen aber nicht wie. Beratungs-Bedarf ist riesig."
+  },
+  {
+    id: 7,
+    title: "Forrester B2B Predictions 2026",
+    publisher: "Forrester Research",
+    date: "Dezember 2025",
+    url: "https://www.forrester.com/predictions/b2b-2026/",
+    keyFindings: [
+      "B2B Software Buying wird zunehmend dezentralisiert (Bottom-Up)",
+      "Sicherheit und Compliance werden Top-Entscheidungskriterien",
+      "Buying Committees werden größer (5+ Personen durchschnittlich)",
+      "Total Cost of Ownership wird 2026 Mainstream"
+    ],
+    keyNumbers: [
+      { label: "Dezentralisierte Käufe", value: "+40%" },
+      { label: "Compliance Top-3", value: "85%" },
+      { label: "Komitee-Größe", value: "5+ Person" },
+      { label: "TCO-fokussiert", value: "72%" }
+    ],
+    relevance: "Unterstreicht Trend zu mehrstakeholder Buying Process, wo Laica als neutrale Kraft wertvoll ist."
+  },
+  {
+    id: 8,
+    title: "Capterra Tech Trends 2025",
+    publisher: "Capterra (Gartner)",
+    date: "Juli 2025",
+    url: "https://www.capterra.com/resources/tech-trends-successful-buyer-purchase-journey/",
+    keyFindings: [
+      "78% der Käufer lesen Reviews BEVOR sie mit Vendor sprechen",
+      "Peer-Reviews sind vertrauenswürdiger als Vendor-Claims",
+      "Buying Journey dauert durchschnittlich 10.2 Monate",
+      "Integrationskompatibilität ist Entscheidungskriterium für 76%"
+    ],
+    keyNumbers: [
+      { label: "Pre-Vendor-Reviews", value: "78%" },
+      { label: "Reviews-Vertrauen", value: "89%" },
+      { label: "Buying Journey", value: "10.2 Mo." },
+      { label: "Integration-wichtig", value: "76%" }
+    ],
+    relevance: "Zeigt Importance von Review-Daten und Integrations-Info, bei Laica zentral."
+  },
+  {
+    id: 9,
+    title: "Gartner SaaS Market Forecast",
+    publisher: "Gartner",
+    date: "2025",
+    url: "https://www.gartner.com/en/newsroom/press-releases",
+    keyFindings: [
+      "Globaler SaaS-Markt erreicht $465 Mrd. in 2025",
+      "Wachstum von +15.2% YoY",
+      "KI-SaaS wächst am schnellsten (+38% YoY)",
+      "Europäischer Markt ist mit 28% Anteil bedeutend"
+    ],
+    keyNumbers: [
+      { label: "Globales SaaS-Volumen", value: "$465B" },
+      { label: "Wachstum YoY", value: "+15.2%" },
+      { label: "KI-SaaS Wachstum", value: "+38%" },
+      { label: "EU-Anteil", value: "28%" }
+    ],
+    relevance: "Baseline für Marktgröße und KI-Momentum zeigt Laicas Positionierung als richtig."
+  },
+  {
+    id: 10,
+    title: "BVMW Mittelstandsbarometer 2025",
+    publisher: "Bundesverband Mittelständische Wirtschaft",
+    date: "Februar 2026",
+    url: "https://bvmw.de/startseite",
+    keyFindings: [
+      "33% der Mittelständler berichten 'gute' digitale Reife",
+      "Aber: 40% planen WENIGER Investitionen in Digital in 2026",
+      "Finanzierung und ROI sind Top-Sorgen",
+      "Datenschutz bleibt #1 Barriere für Software-Adoption"
+    ],
+    keyNumbers: [
+      { label: "Digitale Reife gut", value: "33%" },
+      { label: "Reduzieren Invest.", value: "40%" },
+      { label: "Finanzierungs-Sorge", value: "67%" },
+      { label: "Datenschutz-Barriere", value: "78%" }
+    ],
+    relevance: "Zeigt Pessimismus im Mittelstand trotz Investitionen. Laicas ROI-Fokus ist wertvoll."
+  },
+  {
+    id: 11,
+    title: "IW Köln: KI als Wettbewerbsfaktor",
+    publisher: "Institut der Deutschen Wirtschaft",
+    date: "März 2025",
+    url: "https://www.iwkoeln.de/fileadmin/user_upload/Studien/Report/PDF/2025/IW-Report_2025-KI-als-Wettbewerbsfaktor.pdf",
+    keyFindings: [
+      "KI-Einsatz korreliert mit 18% höherer Profitabilität",
+      "Aber nur 24% der KMU nutzen KI produktiv",
+      "Größte Hürde: strategische Planung und Beratung (85%)",
+      "EU-konforme KI-Tools sind bevorzugt (92%)"
+    ],
+    keyNumbers: [
+      { label: "Profitabilität-Boost", value: "+18%" },
+      { label: "KI-Nutzer KMU", value: "24%" },
+      { label: "Beratungs-Hürde", value: "85%" },
+      { label: "EU-KI bevorzugt", value: "92%" }
+    ],
+    relevance: "IW Köln bestätigt: Strategische Beratung ist limitierender Faktor für KI-Adoption bei KMU."
+  },
+  {
+    id: 12,
+    title: "IONOS KMU Digitalisierung 2025",
+    publisher: "IONOS",
+    date: "Oktober 2025",
+    url: "https://www.ionos-group.com/blog/digitalisierung-kmsa-2025",
+    keyFindings: [
+      "KMU suchen kostengünstige Cloud-Lösungen (50%)",
+      "Sichere deutsche/EU-Server sind kritisch (73%)",
+      "Unkomplizierte Migration ist Anforderung (68%)",
+      "Bundled SaaS-Angebote sind beliebter als Point Solutions"
+    ],
+    keyNumbers: [
+      { label: "Cost-fokussiert", value: "50%" },
+      { label: "EU-Server wichtig", value: "73%" },
+      { label: "Migration-Anforderung", value: "68%" },
+      { label: "Bundled bevorzugt", value: "61%" }
+    ],
+    relevance: "Unterstreicht KMU-Fokus auf Kosten, EU-Compliance, und integrierte Lösungen."
+  }
+];
