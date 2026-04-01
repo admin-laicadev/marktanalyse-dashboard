@@ -1,0 +1,46 @@
+{
+  "generated": "2026-04-01",
+  "endpoints": [
+    {
+      "key": "all",
+      "url": "./api/all.json",
+      "description": "Alle Datensätze kombiniert"
+    },
+    {
+      "key": "competitors",
+      "url": "./api/competitors.json",
+      "count": 19,
+      "description": "19 Wettbewerber im DACH-Markt (Vergleichsportale, Matching-Plattformen, KI-Beratungsagenturen, Bildung)"
+    },
+    {
+      "key": "painPoints",
+      "url": "./api/painPoints.json",
+      "count": 10,
+      "description": "10 gewichtete Schmerzpunkte von KMU bei der Software-Auswahl"
+    },
+    {
+      "key": "studies",
+      "url": "./api/studies.json",
+      "count": 12,
+      "description": "12 Marktstudien von Bitkom, DIHK, KfW, Gartner, IDC, Forrester"
+    },
+    {
+      "key": "news",
+      "url": "./api/news.json",
+      "count": 58,
+      "description": "52 News-Artikel + 6 Trend-Pain-Points zu Digitalsouveränität, DSGVO, KI-Regulierung"
+    },
+    {
+      "key": "partners",
+      "url": "./api/partners.json",
+      "count": 20,
+      "description": "20 potenzielle Medien- und Allianzpartner mit Reichweiten-Metriken"
+    },
+    {
+      "key": "funding",
+      "url": "./api/funding.json",
+      "count": 20,
+      "description": "20 Förderprogramme (Bund, Land, EU) für Startups und KMU"
+    }
+  ]
+}

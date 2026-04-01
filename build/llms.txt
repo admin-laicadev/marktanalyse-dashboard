@@ -1,0 +1,19 @@
+# Laica Marktanalyse Dashboard
+
+> Marktanalyse-Dashboard für den deutschen KMU SaaS- und KI-Tool-Markt (DACH-Region).
+> Enthält Wettbewerbsanalysen, Schmerzpunkte, Marktstudien, News, potenzielle Partner und Förderprogramme.
+> Generiert: 2026-04-01
+
+## API-Endpunkte (JSON)
+
+- [Alle Daten](./api/all.json): Kompletter Datensatz in einer Datei
+- [Wettbewerber](./api/competitors.json): 19 Wettbewerber (Vergleichsportale, Matching-Plattformen, KI-Agenturen, Bildung)
+- [Schmerzpunkte](./api/painPoints.json): 10 gewichtete KMU-Schmerzpunkte bei der Software-Auswahl
+- [Marktstudien](./api/studies.json): 12 Studien (Bitkom, DIHK, KfW, Gartner, IDC, Forrester)
+- [News](./api/news.json): 52 Artikel + 6 Trend-Pain-Points (Souveränität, DSGVO, KI-Regulierung)
+- [Partner](./api/partners.json): 20 potenzielle Medien- und Allianzpartner mit Reichweiten-Metriken
+- [Förderprogramme](./api/funding.json): 20 Programme (Bund, Land, EU)
+
+## Vollständiger Kontext
+
+- [Vollständiges Markdown](./llms-full.txt): Alle Daten als Markdown für LLM-Kontext-Aufnahme
