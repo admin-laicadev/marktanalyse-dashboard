@@ -277,9 +277,9 @@ function buildJsonLd(data, generated) {
     inLanguage: 'de',
     dateModified: generated,
     distribution: [
-      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: './api/all.json', name: 'Vollständiger Datensatz (JSON)' },
-      { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: './llms-full.txt', name: 'Vollständiger Datensatz (Markdown)' },
-      { '@type': 'DataDownload', encodingFormat: 'text/plain', contentUrl: './llms.txt', name: 'LLM-Einstiegspunkt (llms.txt)' },
+      { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: '/api/all.json', name: 'Vollständiger Datensatz (JSON)' },
+      { '@type': 'DataDownload', encodingFormat: 'text/markdown', contentUrl: '/llms-full.txt', name: 'Vollständiger Datensatz (Markdown)' },
+      { '@type': 'DataDownload', encodingFormat: 'text/plain', contentUrl: '/llms.txt', name: 'LLM-Einstiegspunkt (llms.txt)' },
     ],
   });
 }
