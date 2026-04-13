@@ -2,7 +2,7 @@
 
 > Marktanalyse-Dashboard für den deutschen KMU SaaS- und KI-Tool-Markt (DACH-Region).
 > Enthält Wettbewerbsanalysen, Schmerzpunkte, Marktstudien, News, potenzielle Partner und Förderprogramme.
-> Generiert: 2026-04-01
+> Generiert: 2026-04-13
 
 ## API-Endpunkte (JSON)
 

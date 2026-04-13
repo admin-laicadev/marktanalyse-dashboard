@@ -1,35 +1,20 @@
-import { useState } from 'react';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { ExecutiveSummary } from './components/ExecutiveSummary';
 import { TabNav } from './components/TabNav';
 import { CompetitorTab } from './components/CompetitorTab';
+import { CompetitorDetail } from './components/CompetitorDetail';
 import { PainPointsTab } from './components/PainPointsTab';
+import { PainPointDetail } from './components/PainPointDetail';
 import { StudiesTab } from './components/StudiesTab';
+import { StudyDetail } from './components/StudyDetail';
 import { NewsTab } from './components/NewsTab';
+import { NewsPainPointDetail } from './components/NewsPainPointDetail';
 import { PartnersTab } from './components/PartnersTab';
+import { PartnerDetail } from './components/PartnerDetail';
 import { FundingTab } from './components/FundingTab';
+import { FundingDetail } from './components/FundingDetail';
 
-export default function App() {
-  const [activeTab, setActiveTab] = useState('competitors');
-
-  const renderTab = () => {
-    switch (activeTab) {
-      case 'competitors':
-        return <CompetitorTab />;
-      case 'painPoints':
-        return <PainPointsTab />;
-      case 'studies':
-        return <StudiesTab />;
-      case 'news':
-        return <NewsTab />;
-      case 'partners':
-        return <PartnersTab />;
-      case 'funding':
-        return <FundingTab />;
-      default:
-        return <CompetitorTab />;
-    }
-  };
-
+function Layout() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <header className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg sticky top-0 z-40">
@@ -45,9 +30,9 @@ export default function App() {
         <ExecutiveSummary />
 
         <div className="mt-12">
-          <TabNav activeTab={activeTab} onTabChange={setActiveTab} />
+          <TabNav />
           <div className="bg-white border-l border-r border-gray-200 p-8">
-            {renderTab()}
+            <Outlet />
           </div>
         </div>
       </main>
@@ -64,5 +49,27 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Navigate to="/competitors" replace />} />
+        <Route path="competitors" element={<CompetitorTab />} />
+        <Route path="competitors/:id" element={<CompetitorDetail />} />
+        <Route path="pain-points" element={<PainPointsTab />} />
+        <Route path="pain-points/:id" element={<PainPointDetail />} />
+        <Route path="studies" element={<StudiesTab />} />
+        <Route path="studies/:id" element={<StudyDetail />} />
+        <Route path="news" element={<NewsTab />} />
+        <Route path="news/pain-point/:id" element={<NewsPainPointDetail />} />
+        <Route path="partners" element={<PartnersTab />} />
+        <Route path="partners/:id" element={<PartnerDetail />} />
+        <Route path="funding" element={<FundingTab />} />
+        <Route path="funding/:id" element={<FundingDetail />} />
+      </Route>
+    </Routes>
   );
 }

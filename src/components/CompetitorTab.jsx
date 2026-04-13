@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Modal } from './Modal';
+import { Link, useSearchParams } from 'react-router-dom';
 import { competitors } from '../data/competitors';
 
 const categories = [
@@ -12,20 +11,16 @@ const categories = [
 
 function getBadgeColor(relevance) {
   switch (relevance) {
-    case 'hoch':
-      return 'bg-green-100 text-green-800';
-    case 'mittel':
-      return 'bg-yellow-100 text-yellow-800';
-    case 'niedrig':
-      return 'bg-gray-100 text-gray-800';
-    default:
-      return 'bg-gray-100 text-gray-800';
+    case 'hoch': return 'bg-green-100 text-green-800';
+    case 'mittel': return 'bg-yellow-100 text-yellow-800';
+    case 'niedrig': return 'bg-gray-100 text-gray-800';
+    default: return 'bg-gray-100 text-gray-800';
   }
 }
 
 export function CompetitorTab() {
-  const [selectedCategory, setSelectedCategory] = useState('Alle');
-  const [selectedCompetitor, setSelectedCompetitor] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedCategory = searchParams.get('category') ?? 'Alle';
 
   const filtered = selectedCategory === 'Alle'
     ? competitors
@@ -48,7 +43,7 @@ export function CompetitorTab() {
           {categories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setSelectedCategory(cat)}
+              onClick={() => setSearchParams(cat === 'Alle' ? {} : { category: cat })}
               className={`px-3 py-2 rounded-full text-sm font-medium transition-colors ${
                 selectedCategory === cat
                   ? 'bg-teal-600 text-white'
@@ -63,10 +58,10 @@ export function CompetitorTab() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filtered.map((competitor) => (
-          <button
+          <Link
             key={competitor.id}
-            onClick={() => setSelectedCompetitor(competitor)}
-            className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow text-left"
+            to={`/competitors/${competitor.id}`}
+            className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow text-left block"
           >
             <div className="flex justify-between items-start mb-2">
               <h4 className="font-bold text-gray-900">{competitor.name}</h4>
@@ -81,91 +76,9 @@ export function CompetitorTab() {
               <div><strong>Reach:</strong> {competitor.coverage || 'Nicht angegeben'}</div>
             </div>
             <div className="mt-3 text-teal-600 font-medium text-sm">View Details →</div>
-          </button>
+          </Link>
         ))}
       </div>
-
-      <Modal
-        isOpen={!!selectedCompetitor}
-        onClose={() => setSelectedCompetitor(null)}
-        title={selectedCompetitor?.name || ''}
-      >
-        {selectedCompetitor && (
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-bold text-gray-900 mb-2">Business Model</h3>
-              <p className="text-gray-700">{selectedCompetitor.businessModel}</p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <h4 className="font-bold text-gray-900 mb-1">Pricing</h4>
-                <p className="text-gray-700">{selectedCompetitor.pricing}</p>
-              </div>
-              <div>
-                <h4 className="font-bold text-gray-900 mb-1">Focus</h4>
-                <p className="text-gray-700">{selectedCompetitor.focus}</p>
-              </div>
-            </div>
-
-            {selectedCompetitor.coverage && (
-              <div>
-                <h4 className="font-bold text-gray-900 mb-1">Coverage</h4>
-                <p className="text-gray-700">{selectedCompetitor.coverage}</p>
-              </div>
-            )}
-
-            <div>
-              <h4 className="font-bold text-gray-900 mb-2">Relevance for Laica</h4>
-              <p className="text-gray-700 bg-gray-50 p-3 rounded-lg">{selectedCompetitor.relevanceNote}</p>
-            </div>
-
-            {selectedCompetitor.strengths && (
-              <div>
-                <h4 className="font-bold text-gray-900 mb-2">Strengths</h4>
-                <ul className="space-y-1">
-                  {selectedCompetitor.strengths.map((s, i) => (
-                    <li key={i} className="flex gap-2 text-gray-700">
-                      <span className="text-green-600 font-bold">+</span>
-                      <span>{s}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {selectedCompetitor.weaknesses && (
-              <div>
-                <h4 className="font-bold text-gray-900 mb-2">Weaknesses</h4>
-                <ul className="space-y-1">
-                  {selectedCompetitor.weaknesses.map((w, i) => (
-                    <li key={i} className="flex gap-2 text-gray-700">
-                      <span className="text-red-600 font-bold">-</span>
-                      <span>{w}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div>
-              <h4 className="font-bold text-gray-900 mb-2">Details</h4>
-              <p className="text-gray-700">{selectedCompetitor.details}</p>
-            </div>
-
-            {selectedCompetitor.url && (
-              <a
-                href={selectedCompetitor.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-teal-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-teal-700 transition-colors"
-              >
-                Visit Website →
-              </a>
-            )}
-          </div>
-        )}
-      </Modal>
     </div>
   );
 }

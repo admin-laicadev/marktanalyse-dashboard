@@ -5,7 +5,7 @@ import { apiGeneratorPlugin } from './plugins/api-generator.js'
 
 export default defineConfig({
   plugins: [react(), tailwindcss(), apiGeneratorPlugin()],
-  base: './',
+  base: '/',
   build: {
     outDir: 'build',
     emptyOutDir: true,

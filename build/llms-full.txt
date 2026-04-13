@@ -1,6 +1,6 @@
 # Laica Marktanalyse Dashboard – Vollständige Daten
 
-Generiert: 2026-04-01  
+Generiert: 2026-04-13  
 Sprache: Deutsch  
 Kontext: Marktanalyse für KMU SaaS- und KI-Tool-Markt in DACH
 

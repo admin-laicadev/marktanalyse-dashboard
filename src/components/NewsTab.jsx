@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Modal } from './Modal';
+import { Link, useSearchParams } from 'react-router-dom';
 import { newsArticles, newsPainPoints } from '../data/news';
 
 const categories = [
@@ -36,23 +35,25 @@ const sentimentColors = {
 };
 
 export function NewsTab() {
-  const [selectedCategory, setSelectedCategory] = useState('Alle');
-  const [selectedSentiment, setSelectedSentiment] = useState(null);
-  const [selectedPainPoint, setSelectedPainPoint] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const selectedCategory = searchParams.get('category') ?? 'Alle';
+  const selectedSentiment = searchParams.get('sentiment') ?? null;
 
   const filtered = newsArticles.filter((article) => {
-    const categoryMatch =
-      selectedCategory === 'Alle' || article.category === selectedCategory;
-    const sentimentMatch =
-      !selectedSentiment || article.sentiment === selectedSentiment;
+    const categoryMatch = selectedCategory === 'Alle' || article.category === selectedCategory;
+    const sentimentMatch = !selectedSentiment || article.sentiment === selectedSentiment;
     return categoryMatch && sentimentMatch;
   });
 
-  const relatedArticles = selectedPainPoint
-    ? newsArticles.filter((a) =>
-        selectedPainPoint.relatedArticleIds.includes(a.id)
-      )
-    : [];
+  function updateFilter(key, value) {
+    const next = new URLSearchParams(searchParams);
+    if (value === null || value === 'Alle') {
+      next.delete(key);
+    } else {
+      next.set(key, value);
+    }
+    setSearchParams(next);
+  }
 
   return (
     <div className="space-y-6">
@@ -71,7 +72,7 @@ export function NewsTab() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setSelectedCategory(cat)}
+                onClick={() => updateFilter('category', cat)}
                 className={`px-3 py-2 rounded-full text-xs font-medium transition-colors ${
                   selectedCategory === cat
                     ? 'bg-green-600 text-white'
@@ -88,7 +89,7 @@ export function NewsTab() {
           <h3 className="font-bold text-gray-900 mb-2">Filter by Sentiment</h3>
           <div className="flex gap-2 flex-wrap">
             <button
-              onClick={() => setSelectedSentiment(null)}
+              onClick={() => updateFilter('sentiment', null)}
               className={`px-3 py-2 rounded-full text-xs font-medium transition-colors ${
                 !selectedSentiment
                   ? 'bg-gray-700 text-white'
@@ -100,7 +101,7 @@ export function NewsTab() {
             {['positiv', 'neutral', 'kritisch', 'warnung'].map((sent) => (
               <button
                 key={sent}
-                onClick={() => setSelectedSentiment(sent)}
+                onClick={() => updateFilter('sentiment', sent)}
                 className={`px-3 py-2 rounded-full text-xs font-medium transition-colors ${
                   selectedSentiment === sent
                     ? sentimentColors[sent] + ' ring-2'
@@ -151,10 +152,10 @@ export function NewsTab() {
         <h3 className="font-bold text-gray-900 mb-4">Articles Grouped by Pain Point</h3>
         <div className="space-y-3">
           {newsPainPoints.map((pp) => (
-            <button
+            <Link
               key={pp.id}
-              onClick={() => setSelectedPainPoint(pp)}
-              className="w-full text-left bg-white border border-gray-200 rounded-lg p-3 hover:shadow-lg transition-shadow"
+              to={`/news/pain-point/${pp.id}`}
+              className="w-full text-left bg-white border border-gray-200 rounded-lg p-3 hover:shadow-lg transition-shadow block"
             >
               <div className="flex justify-between items-start">
                 <div>
@@ -165,52 +166,10 @@ export function NewsTab() {
                   {pp.relatedArticleIds.length} articles
                 </span>
               </div>
-            </button>
+            </Link>
           ))}
         </div>
       </div>
-
-      <Modal
-        isOpen={!!selectedPainPoint}
-        onClose={() => setSelectedPainPoint(null)}
-        title={selectedPainPoint?.title || ''}
-      >
-        {selectedPainPoint && (
-          <div className="space-y-6">
-            <div>
-              <h3 className="font-bold text-gray-900 mb-2">Description</h3>
-              <p className="text-gray-700">{selectedPainPoint.description}</p>
-            </div>
-
-            <div>
-              <h3 className="font-bold text-gray-900 mb-3">Related Articles</h3>
-              <div className="space-y-3">
-                {relatedArticles.map((article) => (
-                  <div
-                    key={article.id}
-                    className="border-l-4 border-orange-300 pl-3"
-                  >
-                    <a
-                      href={article.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-medium text-teal-600 hover:underline"
-                    >
-                      {article.title} →
-                    </a>
-                    <p className="text-sm text-gray-600 mt-1">
-                      {article.source} • {article.date}
-                    </p>
-                    <p className="text-sm text-gray-700 italic mt-1">
-                      "{article.quote}"
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </Modal>
     </div>
   );
 }

@@ -1,10 +1,7 @@
-import { useState } from 'react';
-import { Modal } from './Modal';
+import { Link } from 'react-router-dom';
 import { studies } from '../data/studies';
 
 export function StudiesTab() {
-  const [selectedStudy, setSelectedStudy] = useState(null);
-
   const keyNumbers = [
     { label: 'Global SaaS Market', value: '$465B', change: '+15.2%' },
     { label: 'KI Adoption (Germany)', value: '36%', change: 'current' },
@@ -34,10 +31,10 @@ export function StudiesTab() {
 
       <div className="space-y-4">
         {studies.map((study) => (
-          <button
+          <Link
             key={study.id}
-            onClick={() => setSelectedStudy(study)}
-            className="w-full text-left bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow"
+            to={`/studies/${study.id}`}
+            className="w-full text-left bg-white border border-gray-200 rounded-lg p-4 hover:shadow-lg transition-shadow block"
           >
             <div className="flex justify-between items-start mb-2">
               <div>
@@ -51,68 +48,9 @@ export function StudiesTab() {
 
             <p className="text-sm text-gray-700 mb-2">{study.keyFindings[0]}</p>
             <div className="text-blue-600 font-medium text-sm">View Study →</div>
-          </button>
+          </Link>
         ))}
       </div>
-
-      <Modal
-        isOpen={!!selectedStudy}
-        onClose={() => setSelectedStudy(null)}
-        title={selectedStudy?.title || ''}
-      >
-        {selectedStudy && (
-          <div className="space-y-6">
-            <div>
-              <p className="text-sm text-gray-600 mb-2">
-                <strong>{selectedStudy.publisher}</strong> • {selectedStudy.date}
-              </p>
-              {selectedStudy.url && (
-                <a
-                  href={selectedStudy.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-teal-600 hover:underline text-sm font-medium"
-                >
-                  Read Full Study →
-                </a>
-              )}
-            </div>
-
-            {selectedStudy.keyNumbers && selectedStudy.keyNumbers.length > 0 && (
-              <div>
-                <h3 className="font-bold text-gray-900 mb-3">Key Metrics</h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {selectedStudy.keyNumbers.map((kn, i) => (
-                    <div key={i} className="bg-gradient-to-br from-gray-100 to-gray-50 p-3 rounded-lg">
-                      <div className="text-xl font-bold text-gray-900">{kn.value}</div>
-                      <div className="text-sm text-gray-600">{kn.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {selectedStudy.keyFindings && selectedStudy.keyFindings.length > 0 && (
-              <div>
-                <h3 className="font-bold text-gray-900 mb-3">Key Findings</h3>
-                <ul className="space-y-2">
-                  {selectedStudy.keyFindings.map((finding, i) => (
-                    <li key={i} className="flex gap-2">
-                      <span className="text-blue-600 font-bold flex-shrink-0">•</span>
-                      <span className="text-gray-700">{finding}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            <div>
-              <h3 className="font-bold text-gray-900 mb-2">Relevance for Laica</h3>
-              <p className="text-gray-700 bg-blue-50 p-3 rounded-lg">{selectedStudy.relevance}</p>
-            </div>
-          </div>
-        )}
-      </Modal>
     </div>
   );
 }
