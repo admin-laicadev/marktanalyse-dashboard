@@ -1,24 +1,25 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { studies } from '../data/studies';
 
 export function StudyDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const item = studies.find((s) => s.id === Number(id));
 
   if (!item) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-500">Study not found.</p>
-        <Link to="/studies" className="text-teal-600 hover:underline mt-2 inline-block">← Back to Studies</Link>
+        <button onClick={() => navigate(-1)} className="text-teal-600 hover:underline mt-2 inline-block">← Back</button>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <Link to="/studies" className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
+      <button onClick={() => navigate(-1)} className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
         ← Back to Studies
-      </Link>
+      </button>
 
       <h2 className="text-2xl font-bold text-gray-900">{item.title}</h2>
 

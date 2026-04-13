@@ -1,24 +1,25 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { partners } from '../data/partners';
 
 export function PartnerDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const item = partners.find((p) => p.id === Number(id));
 
   if (!item) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-500">Partner not found.</p>
-        <Link to="/partners" className="text-teal-600 hover:underline mt-2 inline-block">← Back to Partners</Link>
+        <button onClick={() => navigate(-1)} className="text-teal-600 hover:underline mt-2 inline-block">← Back</button>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <Link to="/partners" className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
+      <button onClick={() => navigate(-1)} className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
         ← Back to Partners
-      </Link>
+      </button>
 
       <h2 className="text-2xl font-bold text-gray-900">{item.name}</h2>
 

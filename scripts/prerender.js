@@ -24,6 +24,7 @@ async function prerender() {
   ]);
 
   const routes = [
+    '/overview',
     '/competitors',
     ...competitors.map((c) => `/competitors/${c.id}`),
     '/pain-points',

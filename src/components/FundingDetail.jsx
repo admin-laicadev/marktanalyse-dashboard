@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { fundingPrograms } from '../data/funding';
 
 const typeLabels = {
@@ -13,22 +13,23 @@ function getRelevanceBars(relevance) {
 
 export function FundingDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const item = fundingPrograms.find((f) => f.id === Number(id));
 
   if (!item) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-500">Funding program not found.</p>
-        <Link to="/funding" className="text-teal-600 hover:underline mt-2 inline-block">← Back to Funding</Link>
+        <button onClick={() => navigate(-1)} className="text-teal-600 hover:underline mt-2 inline-block">← Back</button>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <Link to="/funding" className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
+      <button onClick={() => navigate(-1)} className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
         ← Back to Funding
-      </Link>
+      </button>
 
       <h2 className="text-2xl font-bold text-gray-900">{item.name}</h2>
 

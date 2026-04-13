@@ -27,13 +27,9 @@ function Layout() {
       </header>
 
       <main className="max-w-7xl mx-auto px-4 py-8">
-        <ExecutiveSummary />
-
-        <div className="mt-12">
-          <TabNav />
-          <div className="bg-white border-l border-r border-gray-200 p-8">
-            <Outlet />
-          </div>
+        <TabNav />
+        <div className="bg-white border-l border-r border-gray-200 p-8">
+          <Outlet />
         </div>
       </main>
 
@@ -56,7 +52,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Navigate to="/competitors" replace />} />
+        <Route index element={<Navigate to="/overview" replace />} />
+        <Route path="overview" element={<ExecutiveSummary />} />
         <Route path="competitors" element={<CompetitorTab />} />
         <Route path="competitors/:id" element={<CompetitorDetail />} />
         <Route path="pain-points" element={<PainPointsTab />} />

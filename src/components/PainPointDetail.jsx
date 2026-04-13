@@ -1,24 +1,25 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { painPoints } from '../data/painPoints';
 
 export function PainPointDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const item = painPoints.find((p) => p.id === Number(id));
 
   if (!item) {
     return (
       <div className="text-center py-12">
         <p className="text-gray-500">Pain point not found.</p>
-        <Link to="/pain-points" className="text-teal-600 hover:underline mt-2 inline-block">← Back to Pain Points</Link>
+        <button onClick={() => navigate(-1)} className="text-teal-600 hover:underline mt-2 inline-block">← Back</button>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <Link to="/pain-points" className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
+      <button onClick={() => navigate(-1)} className="inline-flex items-center text-teal-600 hover:text-teal-800 font-medium">
         ← Back to Pain Points
-      </Link>
+      </button>
 
       <h2 className="text-2xl font-bold text-gray-900">{item.title}</h2>
 

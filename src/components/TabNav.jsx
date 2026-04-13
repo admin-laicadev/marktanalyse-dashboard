@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import { BarChart3, AlertTriangle, BookOpen, Newspaper, Users, Coins } from 'lucide-react';
+import { LayoutDashboard, BarChart3, AlertTriangle, BookOpen, Newspaper, Users, Coins } from 'lucide-react';
 
 const tabs = [
+  { path: '/overview', label: 'Overview', icon: LayoutDashboard },
   { path: '/competitors', label: 'Competitors', icon: BarChart3 },
   { path: '/pain-points', label: 'Pain Points', icon: AlertTriangle },
   { path: '/studies', label: 'Studies', icon: BookOpen },
