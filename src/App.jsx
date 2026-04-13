@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { ExecutiveSummary } from './components/ExecutiveSummary';
 import { TabNav } from './components/TabNav';
+import { ScrollToTop } from './components/ScrollToTop';
 import { CompetitorTab } from './components/CompetitorTab';
 import { CompetitorDetail } from './components/CompetitorDetail';
 import { PainPointsTab } from './components/PainPointsTab';
@@ -26,6 +27,7 @@ function Layout() {
         </div>
       </header>
 
+      <ScrollToTop />
       <main className="max-w-7xl mx-auto px-4 py-8">
         <TabNav />
         <div className="bg-white border-l border-r border-gray-200 p-8">
