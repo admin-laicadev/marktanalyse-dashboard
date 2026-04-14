@@ -7,6 +7,8 @@ const categories = [
   'Matching-Plattformen',
   'KI-Beratungsagenturen',
   'Bildung & Geförderte Angebote',
+  'SaaS-Marktplatz',
+  'EU-Alternativen-Kuratierung',
 ];
 
 function getBadgeColor(relevance) {
